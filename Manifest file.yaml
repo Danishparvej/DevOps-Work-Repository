@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-project
+  template:
+    metadata:
+      labels:
+        app: sample-project
+    spec:
+      containers:
+      - name: sample-project
+        image: danish1998/sample-project:1.0
+        ports:
+        - containerPort: 8080
